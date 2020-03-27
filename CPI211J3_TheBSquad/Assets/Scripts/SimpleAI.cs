@@ -15,26 +15,14 @@ public class SimpleAI : MonoBehaviour
             return GetComponent<NavMeshAgent>();
         }
     }
-
-    public AudioClip baseDamage;
-    private AudioSource baseAudio;
     public Transform currentTarget;
     public float redirectDelay;
 
-    [Header("Base Damage")]
-    private IEnumerator _baseDamageDelayRoutine;
-    public float baseDamageDelayTime;
 
-    private void Awake()
-    {
-        _baseDamageDelayRoutine = null;
-    }
 
     private void Start()
     {
-        baseAudio = GetComponent<AudioSource>();
         StartCoroutine(RedirectRoutine());
-        baseAudio.clip = baseDamage;
     }
 
     /// <summary>
@@ -44,28 +32,9 @@ public class SimpleAI : MonoBehaviour
     /// <param name="collision"></param>
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Base") && _baseDamageDelayRoutine == null)
-        {
-            //collision.gameObject.GetComponent<BaseController>().health--;
-            baseAudio.Play();
-
-            _baseDamageDelayRoutine = BaseDamagDelay();
-            StartCoroutine(_baseDamageDelayRoutine);
-        }
+        //Empty
     }
 
-    /// <summary>
-    /// Coroutine that adds a delay to the enemy damaging the base
-    /// </summary>
-    /// <returns></returns>
-    private IEnumerator BaseDamagDelay()
-    {
-        yield return new WaitForSeconds(baseDamageDelayTime);
-
-        _baseDamageDelayRoutine = null;
-
-        yield return null;
-    }
 
     /// <summary>
     /// This coroutine continuosly adjusts the AI's destination
