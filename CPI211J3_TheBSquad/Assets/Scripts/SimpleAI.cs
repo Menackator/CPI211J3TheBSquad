@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 /// <summary>
-/// Simple class for an AI. It constantly follows a target
+/// Class for the AI to follow the player.
 /// </summary>
 public class SimpleAI : MonoBehaviour
 {
@@ -26,8 +26,7 @@ public class SimpleAI : MonoBehaviour
     }
 
     /// <summary>
-    /// Damages the base if they are colliding and the damage delay
-    /// is not active
+    /// Placeholder in case we want it to do something on collision.
     /// </summary>
     /// <param name="collision"></param>
     private void OnCollisionStay(Collision collision)
@@ -37,8 +36,7 @@ public class SimpleAI : MonoBehaviour
 
 
     /// <summary>
-    /// This coroutine continuosly adjusts the AI's destination
-    /// with a delay (this helps performance)
+    /// Continously adjusts the AI's destination with a delay.
     /// </summary>
     /// <returns></returns>
     private IEnumerator RedirectRoutine()
