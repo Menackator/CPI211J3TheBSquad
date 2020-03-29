@@ -6,7 +6,7 @@ using UnityEngine.AI;
 /// <summary>
 /// Class for the AI to follow the player.
 /// </summary>
-public class SimpleAI : MonoBehaviour
+public class simpleAI : MonoBehaviour
 {
     public NavMeshAgent NavAgent
     {

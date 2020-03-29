@@ -40,6 +40,7 @@ public class UIControl : MonoBehaviour
         //GameObject.Find("Slider").GetComponent<Slider>().maxValue = maxHealthPlayer;
         //GameObject.Find("BaseHealthSlide").GetComponent<Slider>().maxValue = maxHealthBase;
 
+        
         nonAlph = new Color32(255,255,255,255);
         alph = new Color32(255,255,255,90);
         
