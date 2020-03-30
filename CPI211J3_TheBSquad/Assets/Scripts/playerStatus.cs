@@ -89,7 +89,7 @@ public class playerStatus : MonoBehaviour
         if (preNumOfTP < curNumOfTP)
         {
             preNumOfTP = curNumOfTP;
-            GameObject.Find("CoronaBottle").GetComponent<UnityEngine.AI.NavMeshAgent>().speed += 1.5f;
+            GameObject.Find("CoronaBottle").GetComponent<UnityEngine.AI.NavMeshAgent>().speed += 1.6f;
             preBottleSpeed = GameObject.Find("CoronaBottle").GetComponent<UnityEngine.AI.NavMeshAgent>().speed;
         }
 
@@ -172,6 +172,8 @@ public class playerStatus : MonoBehaviour
                 promptText.text = "";
                 curNumOfHS++;
                 TPArea = false;
+                playerSounds.clip = TPSound;
+                playerSounds.Play();
                 Destroy(other.gameObject);
             }
         }
