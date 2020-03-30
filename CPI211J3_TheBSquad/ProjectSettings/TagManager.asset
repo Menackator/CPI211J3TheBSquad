@@ -7,7 +7,9 @@ TagManager:
   - PowerUpMeter
   - PowerUpColor
   - Enemy
-  - HealthSlide
+  - TP
+  - HS
+  - HS_Slide
   - HealthColor
   layers:
   - Default
